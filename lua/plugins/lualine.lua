@@ -4,8 +4,7 @@ return {
 		options = {
 			path = 1,
 			icons_enabled = true,
-			theme = "everforest",
-			component_separators = "|",
+			component_separators = "",
 			section_separators = "",
 		},
 	},

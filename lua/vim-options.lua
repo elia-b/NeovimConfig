@@ -14,7 +14,9 @@ vim.opt.cursorline = true
 
 vim.opt.scrolloff = 10
 
-vim.opt.clipboard = "unnamedplus"
+vim.schedule(function()
+	vim.opt.clipboard = "unnamedplus"
+end)
 
 vim.opt.mouse = ""
 
@@ -26,6 +28,7 @@ vim.opt.smartcase = true
 vim.opt.signcolumn = "yes"
 
 vim.opt.updatetime = 250
+vim.opt.timeoutlen = 300
 
 vim.opt.inccommand = "split"
 
@@ -33,3 +36,5 @@ vim.opt.hlsearch = true
 
 vim.opt.spelllang = "en_us"
 vim.opt.spell = true
+
+vim.g.have_nerd_font = true
