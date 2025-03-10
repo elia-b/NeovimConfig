@@ -66,7 +66,9 @@ return {
 			---This function will be called with the highlights and colour palette tables.
 			---@param highlight_groups Highlights
 			---@param palette Palette
-			on_highlights = function(highlight_groups, palette) end,
+			on_highlights = function(highlight_groups, palette)
+				highlight_groups.Comment = { fg = palette.grey1, bg = "NONE", italic = false }
+			end,
 			---You can override colours in the palette to use different hex colours.
 			---This function will be called once the base and background colours have
 			---been mixed on the palette.
