@@ -11,7 +11,7 @@ return {
 			options = {
 				path = 1,
 				component_separators = "",
-				section_separators = "",
+				section_separators = { left = "", right = "" },
 				theme = everforest_hard,
 			},
 			sections = {
