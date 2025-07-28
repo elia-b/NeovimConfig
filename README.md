@@ -10,3 +10,11 @@ but split into multiple files, with some extra plugins and some removed.
 - [Enable parsing](./lua/plugins/treesitter.lua)
 - [Configure formatting](./lua/plugins/conform.lua)
 - [Add a suitable LSP](./lua/plugins/lsp-config.lua)
+
+## Personal NeoVim Help Manual
+
+### Yank Entire File
+
+```command
+:%y
+```
