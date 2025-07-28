@@ -6,5 +6,5 @@ tgt="$HOME/.config/nvim"
 rm -rf "$tgt"
 ln -sf "$src" "$tgt"
 echo "Linked $src   $tgt"
-nvim-update
+nvim --headless -c "Lazy! update" +qa
 
