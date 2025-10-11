@@ -24,3 +24,10 @@ end, { desc = "Copy relative file path to clipboard" })
 vim.keymap.set("n", "<leader>cn", function()
 	vim.fn.setreg("+", vim.fn.expand("%:t"))
 end, { desc = "Copy filename to clipboard" })
+
+vim.keymap.set(
+	"n",
+	"<leader>id",
+	'i<C-r>=strftime("%a, %d %b %Y, %H:%M %Z")<CR><Esc>',
+	{ desc = "Insert current date" }
+)
