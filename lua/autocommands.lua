@@ -22,3 +22,24 @@ vim.api.nvim_create_autocmd("BufReadPost", {
 		end
 	end,
 })
+
+-- Virtual environment activation
+function activate_venv(venv_path)
+	-- Set environment variables for the current Neovim instance
+	vim.env.VIRTUAL_ENV = venv_path
+	vim.env.PATH = venv_path .. "/bin:" .. vim.env.PATH
+	-- Notify user
+	vim.notify("Activated virtual environment: " .. venv_path, vim.log.levels.INFO)
+end
+
+-- Auto-activate the .venv if it exists at the project root
+function auto_activate_venv()
+	local venv_path = vim.fn.getcwd() .. "/.venv"
+	if vim.fn.isdirectory(venv_path) == 1 then
+		activate_venv(venv_path)
+		return true
+	end
+	return false
+end
+
+auto_activate_venv()
