@@ -83,6 +83,11 @@ return {
 			vim.keymap.set("n", "<leader>du", function()
 				dapui.toggle()
 			end, opts("Toggle DAP UI"))
+
+			-- Debug with pytest
+			vim.keymap.set("n", "<leader>dt", function()
+				require("dap-python").test_method()
+			end, { desc = "Debug pytest test" })
 		end,
 	},
 }
