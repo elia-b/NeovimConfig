@@ -35,6 +35,6 @@ vim.opt.inccommand = "split"
 vim.opt.hlsearch = true
 
 vim.opt.spelllang = "en_us"
-vim.opt.spell = true
+vim.opt.spell = false
 
 vim.g.have_nerd_font = true

@@ -43,3 +43,10 @@ function auto_activate_venv()
 end
 
 auto_activate_venv()
+
+vim.api.nvim_create_autocmd("FileType", {
+	pattern = { "markdown", "gitcommit", "text", "plaintext" },
+	callback = function()
+		vim.opt_local.spell = true
+	end,
+})
