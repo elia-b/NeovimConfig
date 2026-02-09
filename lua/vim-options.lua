@@ -38,3 +38,16 @@ vim.opt.spelllang = "en_us"
 vim.opt.spell = false
 
 vim.g.have_nerd_font = true
+
+vim.diagnostic.config({
+	update_in_insert = false,
+	severity_sort = true,
+	float = { border = "rounded", source = "if_many" },
+	underline = { severity = vim.diagnostic.severity.ERROR },
+
+	virtual_text = false, -- Text shows up at the end of the line
+	virtual_lines = true, -- Text shows up underneath the line, with virtual lines
+
+	-- Auto open the float, so you can easily read the errors when jumping with `[d` and `]d`
+	jump = { float = true },
+})
