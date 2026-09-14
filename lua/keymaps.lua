@@ -1,7 +1,5 @@
 vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>")
 
-vim.keymap.set("n", "[d", vim.diagnostic.goto_prev, { desc = "Go to previous [D]iagnostic message" })
-vim.keymap.set("n", "]d", vim.diagnostic.goto_next, { desc = "Go to next [D]iagnostic message" })
 vim.keymap.set("n", "<leader>e", vim.diagnostic.open_float, { desc = "Show diagnostic [E]rror messages" })
 vim.keymap.set("n", "<leader>q", vim.diagnostic.setloclist, { desc = "Open diagnostic [Q]uickfix list" })
 
@@ -35,3 +33,29 @@ vim.keymap.set(
 
 -- Toggle spell check
 vim.keymap.set("n", "<leader>ts", "<cmd>set spell!<cr>", { desc = "Toggle Spell Check" })
+
+-- Quickfix
+vim.keymap.set("n", "<leader>qq", function()
+	local qf_open = false
+
+	for _, win in ipairs(vim.fn.getwininfo()) do
+		if win.quickfix == 1 then
+			qf_open = true
+			break
+		end
+	end
+
+	if qf_open then
+		vim.cmd("cclose")
+	else
+		vim.cmd("copen")
+	end
+end, { desc = "Quickfix: toggle" })
+
+vim.keymap.set("n", "<leader>qn", "<cmd>cnext<CR>", {
+	desc = "Quickfix: next",
+})
+
+vim.keymap.set("n", "<leader>qp", "<cmd>cprev<CR>", {
+	desc = "Quickfix: previous",
+})
